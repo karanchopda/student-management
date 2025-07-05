@@ -8,10 +8,14 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const cors = require('cors');
+
 app.use(cors({
-  origin: ['https://student-management-eosin-sigma.vercel.app/'], 
+  origin: ['https://your-vercel-app-url.vercel.app'], // replace with actual Vercel frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
+
 
 app.use(express.json());
 
