@@ -39,7 +39,7 @@ const StudentRecordManager = () => {
         course: courseFilter
       });
 
-      const response = await fetch(`${API_BASE_URL}/students?${params}`);
+      const response = await fetch(`${API_BASE_URL}/api/students?${params}`);
       const data = await response.json();
 
       if (response.ok) {
@@ -131,7 +131,7 @@ const StudentRecordManager = () => {
   const handleDelete = async (studentId) => {
     if (window.confirm('Are you sure you want to delete this student?')) {
       try {
-        const response = await fetch(`${API_BASE_URL}/students/${studentId}`, {
+        const response = await fetch(`${API_BASE_URL}/api/students/${studentId}`, {
           method: 'DELETE',
         });
 
