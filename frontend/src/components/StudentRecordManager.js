@@ -58,7 +58,7 @@ const StudentRecordManager = () => {
 
   const fetchCourses = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/courses`);
+      const response = await fetch(`${API_BASE_URL}/api/courses`);
       const data = await response.json();
       if (response.ok) {
         setCourses(data);
@@ -95,8 +95,8 @@ const StudentRecordManager = () => {
 
     try {
       const url = editingStudent 
-        ? `${API_BASE_URL}/students/${editingStudent._id}`
-        : `${API_BASE_URL}/students`;
+        ? `${API_BASE_URL}/api/students/${editingStudent._id}`
+        : `${API_BASE_URL}/api/students`;
       
       const method = editingStudent ? 'PUT' : 'POST';
 
